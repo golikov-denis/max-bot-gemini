@@ -1,0 +1,95 @@
+site_name: MAX Bot
+site_description: Чат-бот для мессенджера МАКС, выдающий доступ к мини-приложению Gemini
+site_author: Denis
+site_url: https://golikov-denis.github.io/max-bot-gemini/
+
+repo_name: max-bot-gemini
+repo_url: https://github.com/golikov-denis/max-bot-gemini
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Главная: index.md
+  - Архитектура: architecture.md
+  - API:
+      - Обзор: api/overview.md
+      - Входящие обновления: api/webhook.md
+      - Исходящие запросы: api/outgoing.md
+  - Деплой:
+      - Railway: deployment/railway.md
+      - VPS: deployment/vps.md
+  - Руководство пользователя: user-guide.md
+  - Журнал изменений: changelog.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang:
+        - ru
+        - en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/golikov-denis
